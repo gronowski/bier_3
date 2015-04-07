@@ -3,6 +3,7 @@
 <head>
 <title>Zeile Editieren</TITLE>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style/login_register.css"/>
 </head>
 <body>
 <br>
@@ -13,15 +14,7 @@ require "credentials.inc";
 if(isset($_GET['id'])){
   $id=$_GET['id'];
   
-  require "..\db.inc";
-  
-  /*
-$server = "localhost"; // MySQL-Server
-$user = "root"; // MySQL-Nutzer
-$pass = ""; // MySQL-Kennwort
-$db = "miguel"; //MySQL-Datenbank
-$table = "bier"; //MySQL-Tabelle
-*/
+require "..\db.inc";
 
 $conn = mysql_connect($server, $user, $pass);
 if($conn) {
@@ -65,13 +58,6 @@ $herkunftsland=$_POST['herkunftsland'];
 $herkunftsort=$_POST['herkunftsort'];
 
 require "..\db.inc";
-/*
-$server = "localhost"; // MySQL-Server
-$user = "root"; // MySQL-Nutzer
-$pass = ""; // MySQL-Kennwort
-$db = "miguel"; // MySQL-Datenbank
-$table = "bier"; //Tabelle
-*/
 
 $conn = mysql_connect($server, $user, $pass);
 if($conn)
@@ -107,7 +93,7 @@ Herkunftsort: <input type="text" size="30" name="herkunftsort" value="<?php echo
 Volumen: <input type="text" size="5" name="volumen" value="<?php echo $volumen?>"><br />
 <input type="submit" name="knopf" value="speichern">
 </form>
-<a href="upload_bierbilder.php">Bier-Bild hinaufladen</a>
+<a href="bildupload.php?ziel=bierbild">Bier-Bild hinaufladen</a>
 <?php
 }
 ?>

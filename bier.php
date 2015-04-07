@@ -45,14 +45,15 @@ $select = mysql_select_db($db,$conn);
 ?>
 
 <form name="f1" method="post">
- <select name="land">
+ <select name="land" onchange="document.f1.submit();">
+   <option value="Alle">Wählen Sie</option>
     <option value="Alle">Alle</option>	
 	<?php
      foreach($landArray as $einzel_land)
        echo "<option value=\"".$einzel_land."\">".$einzel_land."</option>";
      ?> 
  </select>
-<input type="submit">
+
 </form>
 
 <br>
@@ -70,31 +71,11 @@ if ($result)
 {
 //Angabe der selektierten Biere
 $number = mysql_num_rows($result);
-echo "<P>Es ";
-/////////////////
-if($number == 1){
-	echo "ist";
-}
-if($number > 1){
-	echo "sind";
-}
-/////////////////
-echo " $number ";
-/////////////////
-if($number == 1){
-	echo "köstliches ";
-}
-if($number > 1){
-	echo "köstliche ";
-}
-/////////////////
-if($number == 1){
-	echo "Bier";
-}
-if($number > 1){
-	echo "Biere";
-}
-echo " gefunden worden.\n";
+if ($number>1)
+   echo "Es sind $number köstliche Biere gewählt worden";
+else
+   echo "Es ist $number köstliches Bier gewählt worden";
+
 //Äussere Tabelle
 echo "<table border=\"0\" style=\"border-color:red\"> \n";
 // Lösung mit mysql_fetch_object

@@ -1,4 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>löschen</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="style/login_register.css"/>
+</head>
+<body>
+
+
 <?php
 //loeschen.php
 require "credentials.inc";
@@ -57,3 +66,5 @@ echo "<h1>Wollen sie dieses Bier wirklich Löschen?</h1>"
 ?>
 <br/>
 <a href="bier_pflege.php">Zurück</a>
+</body>
+</html>

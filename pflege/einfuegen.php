@@ -50,6 +50,11 @@ mysql_close($conn);
 else
 {
 ?>
+<br/>
+<a href="bildupload.php?ziel=bierbild">Bier-Bild hinaufladen</a>
+<br/>
+<a href="bildupload.php?ziel=flagge">Landesflagge hinaufladen</a>
+<br/>
 <form method="POST">
 Name: <input type ="text" name="name"><br />
 Beschreibung: <br /><textarea rows="6" cols="50" name="beschreibung"></textarea><br />
@@ -63,11 +68,7 @@ Volumen: <input type="text" size="5" name="volumen"><br />
 <?php
 }
 ?>
-<br/>
-<a href="upload_bierbilder.php">Bier-Bild hinaufladen</a>
-<br/>
-<a href="upload_flaggen.php">Landesflagge hinaufladen</a>
-<br/>
+
 <a href="bier_pflege.php">Zurück</a>
 </body>
 </html>
