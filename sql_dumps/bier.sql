@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.7.1
+-- version 4.2.11
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 27. Mrz 2015 um 14:59
--- Server Version: 5.6.20
--- PHP-Version: 5.5.15
+-- Erstellungszeit: 21. Apr 2015 um 14:26
+-- Server Version: 5.6.21
+-- PHP-Version: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `bier` (
   `beschreibung` mediumtext CHARACTER SET latin1 NOT NULL,
   `herkunftsland` varchar(100) CHARACTER SET latin1 NOT NULL,
   `herkunftsort` varchar(100) CHARACTER SET latin1 NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci AUTO_INCREMENT=465 ;
+) ENGINE=InnoDB AUTO_INCREMENT=466 DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;
 
 --
 -- Daten für Tabelle `bier`
@@ -98,7 +98,6 @@ INSERT INTO `bier` (`id`, `name`, `groesse`, `volumen`, `bild`, `beschreibung`, 
 (312, 'DEAD PONY CLUB ', 33, 3.8, 'dead.jpg', 'Californien Pale Ale mit Noten von Lychee und Grapefruit, sehr erfrischend, leicht und doch mundfüllend. Trotz des Namens sehr belebend.', 'Schottland', 'Fraserburgh'),
 (313, 'PUNK IPA ', 33, 5.6, 'punk.jpg', 'Punk Indian Pale Ale der schottischen Brewdog Brauerei zeichnet sich vor allem durch seine angenehm tropisch fruchtigen Noten aus. IPA–typisch ist der Geschmack sehr hopfengeprägt. ', 'Schottland', 'Fraserburgh'),
 (314, 'RUSSIAN IMPERIAL STOUT ', 66, 9.5, 'russianimperial.jpg', 'Mit diesem dunklen Russian Imperial Stout ehrt Brewdog die Geschichte dieses Bierstils. Geschmacklich wird das Bier von Schokoladen und Kaffeenoten dominiert. ', 'Schottland', 'Fraserburgh'),
-(315, 'ST. PETER’s INDIA PALE ALE  		   ', 50, 5.5, 'stpeter.jpg', 'Eine traditionelle und authentische Interpretation dieses antiken Stils des klassischen Bieres. Es gewann mehrere Preise im Vereinigten Königreich einschließlich des 1.Platzes unter den Flaschenbieren, der ihm von einer nationalen Tageszeitung verliehen wurde. \r\n\r\nDer Geschmack ist nussig und vordergründig hopfig mit leichter Frucht und dezenter Malzsüsse.\r\n', 'England', 'Suffolk'),
 (316, 'Beimiguel Spezial Lager', 50, 4.8, 'Beimiguel_Spezial_Lager.jpg', 'Helles Lager-Bier, ungefiltert, aus Pilsner Malz und Hopfen, mit untergäriger Hefe vergoren.', 'Schweiz', 'Hünenberg'),
 (317, 'Luzerner Original', 50, 5, 'Luzerner_Original.jpg', 'Das Echte. Gebraut in der Stadt Luzern. Spezialbier, das eine Stammwürze von 12% aufweist und mit einer Mischung aus vier verschiedenen Malzen eingebraut wird. Durch die lange Lagerung erhält es einen vollmundigen Charakter.', 'Schweiz', 'Luzern'),
 (318, 'Luzerner Weizen', 50, 5.2, 'Luzerner_Weizen.jpg', 'Ein wunderbar frisches Weizenbier, das etwas dunkler eingebraut wird als traditionelle Hefeweizen. Unser ', 'Schweiz', 'Luzern'),
@@ -112,11 +111,10 @@ INSERT INTO `bier` (`id`, `name`, `groesse`, `volumen`, `bild`, `beschreibung`, 
 (326, 'BROOKLYN LAGER', 35, 5.2, 'Brooklyn_Lager.jpg', 'Dieses Bier widerspiegelt wahrhaft Malz und Hopfen. Der Geschmack kommt von der Technik "dry hopping", eine uralte Praxis; das Bier wird mit frischem Hopfen versetzt, um einem langen Reifeprozess durchlaufen zu können.', 'USA', 'Brooklyn, NY'),
 (400, 'BUDWEISER BUDVAR ', 33, 5, 'budweiser.jpg', 'Die Popularität dieses Bieres beruht auf seiner 700 jährigen Brautradition und der fein gehopften Frische dieses aussergewöhnlichen Bieres. Es besitzt einen süsslichen, milden und malzigen Geschmack. ', 'Tschechien', 'Ceske Budejovice (Budweis)'),
 (410, 'BERNARD AMBER LAGER ', 50, 4.7, 'bernard.jpg', 'Halbdunkles nicht pasteurisiertes Lagerbier mit Zugabe von frischer Hefe.', 'Tschechien', 'Humpolec'),
-(411, 'COOPERS ORIGINAL PALE ALE', 37.5, 4.5, 'coopers.jpg', 'Der fruchtige und starke Geschmack des Coopers hat eine neue Generation von Pale Ale Trinkern           in Australien hervorgebracht.', 'Australien', 'Regency Park'),
-(412, 'QUILMES', 35, 4.9, 'quilmes.jpg', 'Probieren Sie Quilmes mit seinem frischen, nicht zu herben Geschmack. \r\nMillionen von Argentiniern können nicht irren!\r\n', 'Argentinien', 'Buenos Aires'),
+(411, 'COOPERS ORIGINAL PALE ALE', 37.5, 4.5, 'coopers.jpg', 'Der fruchtige und starke Geschmack des Coopers hat eine neue Generation von Pale Ale Trinkern in Australien hervorgebracht.', 'Australien', 'Regency Park'),
+(412, 'QUILMES', 35, 4, 'quilmes.jpg', 'Probieren Sie Quilmes mit seinem frischen, nicht zu herben Geschmack. \r\nMillionen von Argentiniern kÃ¶nnen nicht irren!', 'Argentinien', 'Buenos Aires'),
 (413, 'AFFLIGEM BLONDE ', 33, 6.8, 'affligem.jpg', 'Sechs Ritter tauschten ihre Rüstungen gegen schlichte Mönchskutten und gründeten im Jahr 1074 im Herzen von Belgien die Abtei von Affligem. Seit jener Zeit wird dort ein Bier gebraut, bis heute unverändert in der Rezeptur. Es zählt zu den ältesten von nur 22 Abteibieren weltweit. Was es aber so ganz besonders macht, ist die zweite Gärungsphase - direkt in der Flasche.\n\nAffligem Blonde ist eine leuchtend-goldgelbe Spezialität. Geruch nach frischem Brot, Zitrusfrüchten und einem Hauch Vanille. Im Geschmack feine Nuancen von Marzipan und Mandel, mit einer leichten Bitterkeit im Abgang.\n', 'Belgien', 'Opwijk'),
 (414, 'LA CORNE TRIPLE', 33, 10, 'corne.jpg', 'Das La Triple Corne du Bois des Pendus ist ein kräftiges Bier mit hervorragendem Geschmack und einem hellen Kupferton. Anders als seine Schwester mit 5,9% Vol. ist es bitterer und richtig blumig.\r\nDas Bier ist sehr duftig und überraschend leicht trinkbar - wahrlich eine angenehme Entdeckung. Sie werden sich wundern: es enthält weder Zucker noch Gewürze. \r\n', 'Belgien', 'Ebly'),
-(415, 'CUVÉE DU CHÂTEAU ', 33, 11, 'cuvee.jpg', 'Der Geschmack des Cuvée du Château trägt die klare Handschrift von der Brauerei Kasteel. Vergleichbar mit dem an Portwein erinnernden Kasteel Donker, jedoch mehr in Richtung Madeira. Dieses ‘premier cru classé’ ist im Quadrupel. Dieser starke, dunkelbraune Biertyp bewegt sich zwischen Süsse und Bitterkeit mit Röstaromen und karamelligem Malz, das im Finish von der Herbe des Hopfens abgelöst wird.', 'Belgien', 'KASTEEL, Ingelmunster	'),
 (416, 'LINDEMANS FRAMBOISE ', 25, 2.5, 'lindemans.jpg', 'Die Brauerei Lindemans genießt in der Bierwelt seit 200 Jahren einen hervorragenden Ruf. Lindemans braut traditionelle und gesüßte Lambic-Sorten nach der Braukunst der Spontangärung. Die Brauerei verwendet dazu nur die besten Zutaten.\r\nLindemans Framboise ist herrliches Saisonbier auf Lambic-Basis, mit 30 % reinem Himbeersaft.\r\n', 'Belgien', 'Vlezenbeek'),
 (417, 'SCOTCH DE SILLY ', 33, 8, 'scotch.jpg', 'Im letzten Jahrhundert brauten die großen Farmen von Hainaut die Gerste und den Hopfen. Silly, ein Dorf im Dreieck von Ath, Enghien und Soignies, gelegen an der Sylle, die ihm seinen Namen verleiht, gründete 1950 eine Brauerei, ursprünglich mit Namen "Cense de la Tour".\r\n\r\nSein Geschmack ist bemerkenswert, leicht und harmonisch komponiert. Es zeigen sich feine Düfte, die an Holz und Haselnuss erinnern und eine herrliche Frische am Gaumen, begleitet von dezenter und doch körperreicher Hopfenbitterkeit.\r\n', 'Belgien', 'Silly'),
 (418, 'SCOTCH SILLY COGNAC ', 75, 11, 'scotch_silly.jpg', 'Das Scotch Silly Barrel Aged Bier wird nach dem Brauen für sechs Monate in ein altes Cognacfass gegeben, um dort auszureifen. Danach wird es nur in 75cl Flaschen abgefüllt.\r\n\r\nDieses Scotch Ale offenbart schon in der Nase dunkles Malz, welches auch im Mund den Takt vorgibt. Die delikaten, traubigen Noten des Cognac stützen die Karamellsüsse dieser Rarität - es existieren weltweit nur 13''000 Flaschen.\r\n', 'Belgien', 'BARREL AGED, Silly'),
@@ -125,7 +123,7 @@ INSERT INTO `bier` (`id`, `name`, `groesse`, `volumen`, `bild`, `beschreibung`, 
 (421, 'GOUDEN CAROLUS, Mechelen', 75, 11.5, 'carlos.jpg', 'Dieses Schaumweinbier wird in Belgien gebraut und anschließend in Frankreich unter Zugabe von Schaumwein-Hefe mehrere Monate gereift.\r\nDieses Bier zeigt vielschichtige Aromen und ist ein Geschenk des Himmels (lat. Deus = Gott). In der Nase zeigen sich Noten von Minze, frischem Apfel, Hopfen und Ingwer. Komplex und delikat ist der Geschmack des Bieres. Zwar nimmt man auf der Zunge ein leichtes Kribbeln wahr, aber dennoch erscheint das Deus angenehm weich und überrascht mit dem Aroma von Äpfeln, reifen Trauben und weiteren fruchtigen Aromen. In seinem Abschluss ist das Sekt Bier wunderbar trocken.\r\n', 'Belgien', 'Buggenhout'),
 (422, 'CAULIER EXTRA ', 33, 4.3, 'caulier_extra.jpg', 'Leichtes Bier ohne Zucker mit reichen Aromen von Zitrusfrüchten. Für Diabetiker und Zöliakie-Betroffene geeignet. Dank seiner niedrigen glykämischen Last und wenigen Kalorien ist Caulier Extra das ideale alkoholische Getränk für ein gutes Gewissen für diejenigen, die Diät oder ihren Blutzuckerspiegel niedrig halten müssen – den anderen schaden die positiven Effekte auch nicht!', 'Belgien', 'Ghislenghien'),
 (423, '\r\nLIEFMANS GOUDENBAND \r\n', 75, 8, 'liefmans.jpg', 'Ursprünglich hieß dieses Bier IJzerenband (Eisenband), als Verweis auf die Eisenreifen um die Bierfässer – den Champagnerkorken erhielt es mit dem neuen Namen Goudenband(Goldband). Das Bier wird in offenen Gärbottichen gelagert, wo eine gemischte bzw. spontane Gärung stattfindet. Die Hopfengabe erfolgt mit Herkules Hopfen. Anschliessend kommt es zur Reifung 4 bis 12 Monate in den Keller. Dem fertig gereiften Bier wird anschließend Jungbier zugegeben, so dass eine weitere Gärung in der Flasche beginnt, deren Erkennungszeichen das von Hand umwickelte Papier ist.\r\nTrocken, leichte malzige Karamellnoten, nussig, angenehme Frucht und Sultaninen, belebt von der Bitterkeit des Herkules-Hopfens.\r\n', 'Belgien', 'Oudenaarde'),
-(424, 'DELIRIUM TREMENS ', 33, 8.5, '1.jpg', 'Seine Authentizität beruht auf seinen 3 verschiedenen Hefesorten sowie auf seiner ganz besonderen und originellen Verpackung, die an das Tongeschirr aus Köln erinnert und einige schräge Details aufweist:  Rosa Elefanten, stolzierende Krokodile und ein Drache. Die Schriftart in der „Delirium Tremens“ (lat. Alkoholdilirium) geschrieben ist, passt mit ihren Schnörkeln gut zum Namen. Eine hellblaue Aluhalskrause setzt dem Ganzen die Krone auf. Hoher Wiedererkennungswert!\r\nWen wundert es, dass man bei einem Bier mit 8,5% Vol. gewisse Alkoholaromen schmeckt. Diese sind eher stark ausgeprägt und kommen delikat mostig zum Vorschein. Hintergründig erkennt man ein vielschichtiges und harmonisches Spiel von Malz, Frucht und Bitterkeit. \r\n', 'Belgien', 'Melle'),
+(424, 'DELIRIUM TREMENS ', 33, 8.5, 'Delirium_Tremens.jpg', 'Seine Authentizit&auml;t beruht auf seinen 3 verschiedenen Hefesorten sowie auf seiner ganz besonderen und originellen Verpackung, die an das Tongeschirr aus K&ouml;ln erinnert und einige schrÃƒÂ¤ge Details aufweist:  Rosa Elefanten, stolzierende Krokodile und ein Drache. Die Schriftart in der Ã‚Â„Delirium TremensÃ‚Â“ (lat. Alkoholdilirium) geschrieben ist, passt mit ihren SchnÃƒÂ¶rkeln gut zum Namen. Eine hellblaue Aluhalskrause setzt dem Ganzen die Krone auf. Hoher Wiedererkennungswert!\r\nWen wundert es, dass man bei einem Bier mit 8,5% Vol. gewisse Alkoholaromen schmeckt. Diese sind eher stark ausgeprÃƒÂ¤gt und kommen delikat mostig zum Vorschein. HintergrÃƒÂ¼ndig erkennt man ein vielschichtiges und harmonisches Spiel von Malz, Frucht und Bitterkeit. \r\n', 'Belgien', 'Melle'),
 (425, 'ST FEUILLIEN TRIPLE ', 75, 8.5, 'le_roulex.jpg', 'Die Brauerei geht auf den gleichnamigen irischen Mönch zurück, der im Jahr 655 in Roeulx enthauptet wurde. Zu seinem Gedenken errichteten seine Anhänger an gleicher Stelle eine Kapelle - die spätere Abtei Saint-Feuillien du Rœulx, wo schon seinerzeit Bier gebraut wurde. \r\n1873 belebte die Familie Friart die Brauereitradition neu und zelebriert heute bereits in 4. Generation authentische belgische Brauereikunst.\r\nDas Erfolgsrezept von Saint-Feuillien: Die obergärigen Biere werden ohne Zusatzstoffe nach alten überlieferten Braumethoden gebraut: Verwendet werden hochwertiger aromatischer Hopfen und ausgewähltes Malz. Die einmonatige horizontale Lagerung sowie eine mindestens zweiwöchige zweite Flaschengärung sind das Geheimnis des St Feuillien, das es als Blonde, Brune Réserve, Triple, Cuvée de Noël, Saison, Grand Cru, Grisette Blonde, Blanche, Waldfrucht- und Kirsch-Bier gibt, die am besten in dem typisch bauchigem Glas genossen werden.\r\n', 'Belgien', 'Le Roeulx'),
 (426, '\r\nDas Bier St-Feuillien Triple\r\n', 0, 0, 'das_bier.png', 'hat ein weisses, glattes und sehr kompaktes Bouquet. Seine blass-gelbe Farbe ist sehr charakteristisch und enthüllt eine unverwechselbare Malzigkeit. Es hat ein reiches Aroma mit einer einzigartigen Kombination von aromatischem Hopfen, Gewürzen und dem typischen Duft der Gärung - sehr fruchtig. Durch die stark obergärige Hefe entwickelt das Bier bei der Nachgärung in der Flasche ein unvergleichliches Aroma.\r\nSt Feuillien Triple hat einen sehr starken und außergewöhnlich lang anhaltenden Geschmack, dies verdankt es seiner Dichte und seiner langen Lagerzeit. \r\nOb als erfrischender Aperitif  im Sommer oder aber auch im Winter vor dem Kamin serviert ist es immer ein Genuss.\r\n', 'Belgien', ' St. Feuillien'),
 (427, 'BERTINCHAMPS BLONDE ', 50, 6.2, 'bertinchamps_blonde.png', 'Eine blumige Nase nach frischem Heu, Aromen von geröstetem Getreide mit einem Hauch von Pfeffer. Gut balanciert mit angenehmer Bitterkeit am Ende. \r\n\r\nEin erfrischendes Bier zum Geniessen.\r\n', 'Belgien', 'Gembloux'),
@@ -151,24 +149,24 @@ INSERT INTO `bier` (`id`, `name`, `groesse`, `volumen`, `bild`, `beschreibung`, 
 (450, 'BERTINCHAMPS TRIPLE', 50, 8, 'bertichamps_tripple.jpg', 'Ein bernsteinfarbener, körperbetonter Auftritt und eine Vielfalt von Frische, Hopfenbitterkeit und diskreten Karamellnoten machen es zum Erlebnis. ', 'Belgien', 'Gembloux');
 
 --
--- Indexes for dumped tables
+-- Indizes der exportierten Tabellen
 --
 
 --
--- Indexes for table `bier`
+-- Indizes für die Tabelle `bier`
 --
 ALTER TABLE `bier`
  ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT für exportierte Tabellen
 --
 
 --
--- AUTO_INCREMENT for table `bier`
+-- AUTO_INCREMENT für Tabelle `bier`
 --
 ALTER TABLE `bier`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=465;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=466;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

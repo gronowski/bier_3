@@ -7,21 +7,15 @@
 <body>
 
 <?php
+//Filename: bier.php
+
 //Problem mit Umlauten, grossem Ö => Oesterreich anstatt Östereich
 $land="Alle";
 if (isset($_POST['land']))
    $land=$_POST['land'];
-//echo "Wir wählen ".$land;
 
-require "db.inc";
-
-/*
-$server = "localhost"; // MySQL-Server
-$user = "root"; // MySQL-Nutzer
-$pass = ""; // MySQL-Kennwort
-$db = "miguel"; //MySQL-Datenbank
+require "db.php";
 $table = "bier"; //MySQL-Tabelle
-*/
 
 $conn = mysql_connect($server, $user, $pass);
 if($conn) {
@@ -38,7 +32,6 @@ $select = mysql_select_db($db,$conn);
      $i=0;
      while ($row=mysql_fetch_object($result)){
 	   $landArray[$i]=$row->herkunftsland;
-	   //echo $landArray[$i];
 	   $i++;	   
 	 }
   }         
@@ -46,17 +39,16 @@ $select = mysql_select_db($db,$conn);
 
 <form name="f1" method="post">
  <select name="land" onchange="document.f1.submit();">
-   <option value="Alle">Wählen Sie</option>
+	<option value="Alle">Wählen Sie</option>
     <option value="Alle">Alle</option>	
 	<?php
      foreach($landArray as $einzel_land)
        echo "<option value=\"".$einzel_land."\">".$einzel_land."</option>";
      ?> 
  </select>
-
 </form>
 
-<br>
+<br />
 <?php
 
 //Sql Statement
@@ -78,7 +70,6 @@ else
 
 //Äussere Tabelle
 echo "<table border=\"0\" style=\"border-color:red\"> \n";
-// Lösung mit mysql_fetch_object
 
 $hklalt=""; //Herkunftsland alt
 while ($row=mysql_fetch_object($result)){
@@ -92,23 +83,20 @@ if ($hkl!=$hklalt){
 	echo "</td><td>";
 	
 	//Zwischentitel mit Flaggen ausgeben
-	
 	 foreach($landArray as $einzel_land){
 	    if (strcmp($hkl,trim($einzel_land))==0){    
 		   echo "<img src=\"flaggen/".$einzel_land.".png\" height=\"80\">";
-		   //echo "Bildname: ".$einzel_land.".png";
            }		   
 	 }		
 	echo "</td></tr></table>";	
 	};
 
-
 //Interne Tabelle
 echo "<table  style=\"width:100%\" border=\"0\">\n";
-echo "<td rowspan=\"4\" id=\"bild\">\n";
+echo "<tr><td rowspan=\"4\" id=\"bild\">\n";
 echo "<img src=bier_bilder/".$row->bild." height=\"100\"></td><td id=\"titel\">\n";
-echo "<h1>".utf8_encode($row->name)."  (".$row->groesse." cl / ".$row->volumen." %)</h1></td></tr><tr></td><td>\n";
-echo "<h2>".utf8_encode($row->herkunftsort).", ".utf8_encode($row->herkunftsland)."</h2></tr><tr></td><td>\n";
+echo "<h1>".utf8_encode($row->name)."  (".$row->groesse." cl / ".$row->volumen." %)</h1></td></tr><tr><td>\n";
+echo "<h2>".utf8_encode($row->herkunftsort).", ".utf8_encode($row->herkunftsland)."</h2></td></tr><tr><td>\n";
 echo utf8_encode($row->beschreibung)."\n";
 echo "<hr/>\n";
 echo "</tr>\n";     
@@ -118,7 +106,6 @@ echo "</td></tr>\n"; //Schliessen td äussere Tabelle
 $hklalt=$hkl; //letztes Herkunftsland sichern
 }
 echo "</table>\n";
-//echo "<P>Abfrage: <I>$sql</I>";
 }
 else
 {
